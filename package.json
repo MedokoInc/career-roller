@@ -1,0 +1,19 @@
+{
+  "name": "career-roller",
+  "version": "1.0.0",
+  "description": "The WIFI Vienna wants to help\r people who are unsatisfied with their\r job to choose a random new career\r path. They require an application\r which lets you define certain\r parameters and then presents users\r of the WebApp with a random job\r and details on training for it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MedokoInc/career-roller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MedokoInc/career-roller/issues"
+  },
+  "homepage": "https://github.com/MedokoInc/career-roller#readme"
+}
