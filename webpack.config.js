@@ -1,41 +1,32 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-    entry: './src/index.js',
+    entry: "./src/app.js",
+    watch: true,
+    mode: 'development',
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: "bundle.js",
+        path: path.resolve(__dirname, "dist"),
     },
+
     module: {
         rules: [
             {
-                test: /\.(scss)$/,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
+                    "style-loader",
+                    "css-loader",
                     {
-                        // Adds CSS to the DOM by injecting a `<style>` tag
-                        loader: 'style-loader'
-                    },
-                    {
-                        // Interprets `@import` and `url()` like `import/require()` and will resolve them
-                        loader: 'css-loader'
-                    },
-                    {
-                        // Loader for webpack to process CSS with PostCSS
-                        loader: 'postcss-loader',
+                        loader: "postcss-loader",
                         options: {
-                            plugins: function () {
-                                return [
-                                    require('autoprefixer')
-                                ];
-                            }
-                        }
+                            postcssOptions: {
+                                plugins: ["autoprefixer"],
+                            },
+                        },
                     },
-                    {
-                        // Loads a SASS/SCSS file and compiles it to CSS
-                        loader: 'sass-loader'
-                    }
-                ]
-            }
-        ]
-    }
+                    "sass-loader",
+                ],
+            },
+        ],
+    },
 };
